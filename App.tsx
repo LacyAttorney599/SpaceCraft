@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
+// import { LoginScreen } from './src/screens/LoginScreen';
+import React from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { StarshipFeedScreen } from "./src/screens/StarshipFeedScreen";
+import { TermsScreen } from "./src/screens/TermsScreen";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from "@react-navigation/native";
+import { LoginScreen } from "./src/screens/LoginScreen";
+import { SafeAreaView } from "react-native";
+
+const queryClient = new QueryClient();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={{
+      flex: 1
+    }}>
+
+      <QueryClientProvider client={queryClient}>
+        <StarshipFeedScreen />
+      </QueryClientProvider>
+    </SafeAreaView >
+
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
