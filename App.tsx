@@ -8,6 +8,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from "@react-navigation/native";
 import { LoginScreen } from "./src/screens/LoginScreen";
 import { SafeAreaView } from "react-native";
+import { Navigator } from './src/navigation/Navigator';
+
 
 const queryClient = new QueryClient();
 
@@ -18,7 +20,7 @@ const App = () => {
     }}>
 
       <QueryClientProvider client={queryClient}>
-        <StarshipFeedScreen />
+        <Navigator />
       </QueryClientProvider>
     </SafeAreaView >
 

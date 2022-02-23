@@ -14,14 +14,18 @@ export const LoginScreen = ({ navigation }: any) => {
         navigation.navigate(Routes.TERMS_SCREEN);
     };
 
+    function navigateToFeed() {
+        navigation.navigate(Routes.STARSHIP_FEED_SCREEN);
+    };
+
+
+
 
     // --- Front of page 
     return (
         <SafeAreaView style={styles.container}>
 
-            <View style={styles.formHeader}>
-                <Text style={styles.titlePage}>Welcome to MY-APP</Text>
-            </View>
+
             <View style={styles.view}>
                 <View style={styles.email}>
                     <TextInput
@@ -39,11 +43,14 @@ export const LoginScreen = ({ navigation }: any) => {
                         onChangeText={text => setText(text)}
                     />
                 </View>
-                <View style={styles.button}>
-                    <Button style={styles.button} icon="login" onPress={() => console.log('Pressed')}>
-                        Press me
-                    </Button>
-                </View>
+
+
+                <Button style={styles.button} icon="login" onPress={navigateToFeed}>
+                    Login
+                </Button>
+
+
+
                 <View>
                     <TouchableOpacity onPress={navigateToTerms}>
                         <Text>Lire les conditions</Text>
@@ -61,7 +68,8 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
-        //justifyContent: 'center',
+        justifyContent: 'center',
+        alignContent: 'center',
     },
 
     view: {
@@ -70,23 +78,17 @@ const styles = StyleSheet.create({
 
     },
     email: {
-        width: 200,
-        borderWidth: 3,
+
+        width: 350
 
     },
     password: {
-        width: 200,
+        width: 350,
         marginTop: 30,
         marginBottom: 30,
-        borderWidth: 3,
-    },
-    formHeader: {
-        height: 200,
-        backgroundColor: '#AF33FF',
-        justifyContent: 'center',
-        alignItems: 'center',
 
     },
+
     titlePage: {
         fontSize: 30,
         fontWeight: 'bold'
@@ -94,8 +96,7 @@ const styles = StyleSheet.create({
     button: {
 
         padding: 5,
-        borderWidth: 3,
-        backgroundColor: '#AF33FF',
+        backgroundColor: 'blue',
 
     },
 

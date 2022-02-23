@@ -11,10 +11,7 @@ export const TermsScreen = () => {
 
   return (
     <View>
-      <Appbar.Header>
-        <Appbar.BackAction onPress={goBack} />
-        <Appbar.Content title="Terms and Conditions" />
-      </Appbar.Header>
+
       <ScrollView style={{ padding: 32, marginBottom: 32 }}>
         <Text>
           This Terms of Service, including all supplemental terms as amended
@@ -103,7 +100,7 @@ export const TermsScreen = () => {
 
         <Text style={{ marginBottom: 128 }}>May the force be with you</Text>
       </ScrollView>
-      
+
     </View>
   );
 };

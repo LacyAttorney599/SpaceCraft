@@ -1,16 +1,23 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import React from "react";
-import { LoginScreen } from "../screens/LoginScreen";
-import { TermsScreen } from "../screens/TermsScreen";
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import { LoginScreen } from '../screens/LoginScreen'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { Routes } from './Routes'
+import { TermsScreen } from '../screens/TermsScreen'
+import { StarshipFeedScreen } from '../screens/StarshipFeedScreen'
 
-
+type Props = {}
 
 const Stack = createNativeStackNavigator();
-<NavigationContainer>
-  <Stack.Navigator initialRouteName="Login">
-    <Stack.Screen name="Login" component={LoginScreen} />
-    <Stack.Screen name="Terms" component={TermsScreen} />
-  </Stack.Navigator>
-</NavigationContainer>
 
+export const Navigator = (props: Props) => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name={Routes.LOGIN_SCREEN} component={LoginScreen} />
+        <Stack.Screen name={Routes.TERMS_SCREEN} component={TermsScreen} />
+        <Stack.Screen name={Routes.STARSHIP_FEED_SCREEN} component={StarshipFeedScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+}
